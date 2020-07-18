@@ -1,0 +1,11 @@
+.settings/
+.project
+lojasnet-ear/target
+lojasnet-web/target
+lojasnet-ejb/target
+lojasnet-ear/.settings/
+lojasnet-ejb/.settings/
+lojasnet-web/.settings/
+lojasnet-ear/.project
+lojasnet-ejb/.project
+lojasnet-web/.project
