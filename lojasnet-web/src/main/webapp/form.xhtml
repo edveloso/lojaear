@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1>
+				<i class="fa fa-tachometer"></i> Aplicação com JSF
+				<h3>Commercio de livro</h3>
+			</h1>
+
+		</div>
+
+
+
+		<h1>Cadastro de livros</h1>
+		
+		
+		<h:form id="form">
+			
+			<div  class="form-group" >
+				<label for="nome">Nome</label>
+				<h:inputText
+					id="nome"
+					value="#{livroBean.livro.nome}"				
+					styleClass="form-control"
+				>
+				</h:inputText>
+			</div>
+			
+			<h:panelGroup>
+				<h:commandLink
+					action="#{livroBean.salvar()}"
+					value="Cadastrar"
+					styleClass="btn btn-primary"
+				>
+				</h:commandLink>
+				&nbsp;
+				<h:commandLink
+					action="#{livroBean.home()}"					
+					styleClass="btn btn-secondary"
+				>
+				<i class="fa fa-chevron-circle-left" ></i> Voltar a listagem
+				</h:commandLink>
+			
+			</h:panelGroup>
+		
+		
+		</h:form>
+		
+
+
+
+
+	</div>
+
+
+</body>
+</html>

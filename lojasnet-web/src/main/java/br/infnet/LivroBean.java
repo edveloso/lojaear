@@ -14,8 +14,25 @@ public class LivroBean {
 
 	private List<Livro> livros;
 	
+	private Livro livro;
+	
 	public LivroBean() {
 		livros = new ArrayList<Livro>();
+		livro = new Livro();
+	}
+	
+	public String home() {
+		return "home";
+	}
+	
+	public String salvar() {
+		service.salvar(livro);
+		return "home";
+	}
+	
+	public String newForm() {
+		livro = new Livro();
+		return "form";
 	}
 
 	public List<Livro> getLivros() {
@@ -24,6 +41,14 @@ public class LivroBean {
 
 	public void setLivros(List<Livro> livros) {
 		this.livros = livros;
+	}
+
+	public Livro getLivro() {
+		return livro;
+	}
+
+	public void setLivro(Livro livro) {
+		this.livro = livro;
 	}
 	
 	
