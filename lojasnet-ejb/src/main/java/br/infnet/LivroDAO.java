@@ -15,12 +15,16 @@ public class LivroDAO {
 	private EntityManager em;
 	
 	public Livro salvar(Livro livro) {
-		em.persist(livro);
+		em.merge(livro);
 		return livro;
 	}
 	
 	public List<Livro> listar(){
 		return em.createQuery("from Livro l", Livro.class).getResultList();
+	}
+
+	public Livro obterPeloId(Long id) {
+		return em.find(Livro.class, id);
 	}
 	
 	

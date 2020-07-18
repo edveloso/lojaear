@@ -2,8 +2,10 @@ package br.infnet;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Map;
 
 import javax.enterprise.inject.Model;
+import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
 @Model
@@ -19,6 +21,20 @@ public class LivroBean {
 	public LivroBean() {
 		livros = new ArrayList<Livro>();
 		livro = new Livro();
+	}
+	
+	public String formAlterar() {
+		String id = getRequestParameter("paramId");
+		Livro livro = service.obterPeloId(Long.valueOf(id));
+		this.setLivro(livro);
+		return "edit";
+	}
+
+	private String getRequestParameter(String parametro) {
+		FacesContext context = FacesContext.getCurrentInstance();
+		Map<String, String> map = context.getExternalContext().getRequestParameterMap();
+		String id = map.get(parametro);
+		return id;
 	}
 	
 	public String home() {

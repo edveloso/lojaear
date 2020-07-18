@@ -20,5 +20,10 @@ public class LivroService implements ILivroService {
 	public List<Livro> listar(){
 		return dao.listar();
 	}
+
+	@Override
+	public Livro obterPeloId(Long id) {
+		return dao.obterPeloId(id);
+	}
 	
 }

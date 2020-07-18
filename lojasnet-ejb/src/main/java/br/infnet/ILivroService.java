@@ -8,4 +8,6 @@ public interface ILivroService {
 
 	List<Livro> listar();
 
+	Livro obterPeloId(Long valueOf);
+
 }

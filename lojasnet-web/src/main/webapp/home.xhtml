@@ -27,7 +27,7 @@
 
 
 
-		<div class="d-flex justify-content-between" >
+		<div class="d-flex justify-content-between">
 			<h1>Listagem de livros</h1>
 			<h:form>
 				<h:commandLink styleClass="btn btn-primary"
@@ -36,36 +36,37 @@
 			</h:form>
 		</div>
 
+		<h:form>
+			<h:dataTable id="lista" var="livro" value="#{livroBean.livros}"
+				styleClass="table">
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Nome"></h:outputText>
+					</f:facet>
 
-		<h:dataTable id="lista" var="livro" value="#{livroBean.livros}"
-			styleClass="table">
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Nome"></h:outputText>
-				</f:facet>
+					<h:outputText value="#{livro.nome}"></h:outputText>
 
-				<h:outputText value="#{livro.nome}"></h:outputText>
+				</h:column>
 
-			</h:column>
+				<h:column>
+					<f:facet name="header">
+						<h:outputText value="Ações"></h:outputText>
+					</f:facet>
 
-			<h:column>
-				<f:facet name="header">
-					<h:outputText value="Ações"></h:outputText>
-				</f:facet>
-
-				<h:panelGroup>
-					<h:commandLink action="#" value="Editar"
-						styleClass="btn btn-primary">
-					</h:commandLink>
+					<h:panelGroup>
+						<h:commandLink action="#{livroBean.formAlterar}" value="Editar"
+							styleClass="btn btn-primary">
+							<f:param value="#{livro.id}" name="paramId" ></f:param>
+						</h:commandLink>
 					&nbsp;
 					<h:commandLink action="#" value="Deletar"
-						styleClass="btn btn-danger">
-					</h:commandLink>
-				</h:panelGroup>
+							styleClass="btn btn-danger">
+						</h:commandLink>
+					</h:panelGroup>
 
-			</h:column>
-		</h:dataTable>
-
+				</h:column>
+			</h:dataTable>
+		</h:form>
 
 	</div>
 
