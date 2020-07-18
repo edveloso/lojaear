@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<title>Insert title here</title>
+<link rel="stylesheet"
+	href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css" />
+
+<link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+
+</head>
+<body>
+
+	<div class="container">
+
+		<div class="jumbotron">
+			<h1>
+				<i class="fa fa-tachometer"></i> Aplicação com JSF
+				<h3>Commercio de livro</h3>
+			</h1>
+
+		</div>
+
+		<h1>Listagem de livros</h1>
+
+		<h:dataTable id="lista" var="livro" value="#{livroBean.livros}"
+			styleClass="table">
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Nome"></h:outputText>
+				</f:facet>
+				<h:outputText value="#{livro.nome}"></h:outputText>
+			</h:column>
+			
+			<h:column>
+				<f:facet name="header">
+					<h:outputText value="Ações"></h:outputText>
+				</f:facet>
+				
+				<h:panelGroup>
+					<h:commandLink action="#" value="Editar"
+						styleClass="btn btn-primary">
+					</h:commandLink>
+					&nbsp;
+					<h:commandLink action="#" value="Deletar"
+						styleClass="btn btn-danger">
+					</h:commandLink>
+				</h:panelGroup>
+				
+			</h:column>
+		</h:dataTable>
+
+
+	</div>
+
+
+</body>
+</html>
