@@ -1,9 +1,0 @@
-
-
-Configuracao de datasource no wildfly
-
-module add --name=mysql --resources=/Users/dpt/.m2/repository/mysql/mysql-connector-java/8.0.20/mysql-connector-java-8.0.20.jar --dependencies=javax.api,javax.transaction.api
-
-/subsystem=datasources/jdbc-driver=mysql:add(driver-name=mysql,driver-module-name=mysql,driver-xa-datasource-class-name=com.mysql.cj.jdbc.MysqlXADataSource)
-
-data-source add --name=lojasnetDS --jndi-name=java:jboss/datasources/lojasnetDS --driver-name=mysql --connection-url=jdbc:mysql://localhost:3306/lojadb --user-name=root --password=root --min-pool-size=10 --max-pool-size=20 
