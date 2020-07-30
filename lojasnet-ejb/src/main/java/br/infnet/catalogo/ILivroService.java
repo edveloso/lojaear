@@ -1,4 +1,4 @@
-package br.infnet;
+package br.infnet.catalogo;
 
 import java.util.List;
 

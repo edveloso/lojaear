@@ -8,6 +8,9 @@ import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
 import javax.ws.rs.core.MediaType;
 
+import br.infnet.catalogo.ILivroService;
+import br.infnet.catalogo.Livro;
+
 @Path("/livros")
 public class LivroResource {
 

@@ -8,6 +8,9 @@ import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
 
+import br.infnet.catalogo.ILivroService;
+import br.infnet.catalogo.Livro;
+
 @Model
 public class LivroBean {
 	

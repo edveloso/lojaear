@@ -1,4 +1,4 @@
-package br.infnet;
+package br.infnet.catalogo;
 
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
