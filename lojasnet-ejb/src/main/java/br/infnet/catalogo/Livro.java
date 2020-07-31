@@ -3,6 +3,7 @@ package br.infnet.catalogo;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Livro {
@@ -15,6 +16,7 @@ public class Livro {
 	
 	private String descricao;
 	
+	@Lob
 	private String foto;
 
 	public Long getId() {

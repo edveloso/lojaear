@@ -42,6 +42,27 @@
 				</h:inputText>
 			</div>
 			
+			<div  class="form-group" >
+				<label for="foto">Foto</label>
+				<h:inputText
+					id="foto"
+					value="#{livroBean.livro.foto}"				
+					styleClass="form-control"
+				>
+				</h:inputText>
+			</div>
+			
+			<div  class="form-group" >
+				<label for="descricao">Descrição</label>
+				<h:inputText
+					id="descricao"
+					value="#{livroBean.livro.descricao}"				
+					styleClass="form-control"
+				>
+				</h:inputText>
+			</div>
+			
+			
 			<h:panelGroup>
 				<h:commandLink
 					action="#{livroBean.salvar()}"

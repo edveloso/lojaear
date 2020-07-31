@@ -29,14 +29,14 @@
 
 		<div class="d-flex justify-content-between">
 			<h1>Listagem de livros</h1>
-			<h:form>
+			<h:form id="novo" >
 				<h:commandLink styleClass="btn btn-primary"
 					action="#{livroBean.newForm}" value="Cadatrar novo livro">
 				</h:commandLink>
 			</h:form>
 		</div>
 
-		<h:form>
+		<h:form id="table">
 			<h:dataTable id="lista" var="livro" value="#{livroBean.livros}"
 				styleClass="table">
 				<h:column>

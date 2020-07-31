@@ -41,17 +41,18 @@ public class LivroBean {
 	}
 	
 	public String home() {
-		return "livros/home";
+		return "/livros/home";
 	}
 	
 	public String salvar() {
 		service.salvar(livro);
-		return "livros/home";
+		return "/livros/home";
 	}
 	
 	public String newForm() {
+		System.out.println("bateu aqui");
 		livro = new Livro();
-		return "livros/form";
+		return "/livros/form";
 	}
 
 	public List<Livro> getLivros() {
