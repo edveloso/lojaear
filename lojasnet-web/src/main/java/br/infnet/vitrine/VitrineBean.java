@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import br.infnet.catalogo.ILivroService;
 import br.infnet.catalogo.Livro;
+import ws.jboss.org.alibanet.ecommerce.catalogo.EntregaResponse;
 
 @Model
 @SessionScoped
@@ -24,6 +25,9 @@ public class VitrineBean implements Serializable {
 
 	@Inject
 	private ILivroService service;
+	
+	@Inject
+	private EntregaService entregaService;
 
 	private List<Livro> livros;
 	
@@ -39,6 +43,10 @@ public class VitrineBean implements Serializable {
 	
 	public String pagar() {
 		//TODO pagamento realizado com sucesso
+		List<EntregaResponse> lista = entregaService.list();
+		if(lista != null) {
+			quantidade = lista.size();
+		}
 		return "/vitrine/entrega";
 	}
 	
