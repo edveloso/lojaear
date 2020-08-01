@@ -3,6 +3,7 @@ package br.infnet;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
+import javax.persistence.Lob;
 
 @Entity
 public class Livro {
@@ -12,6 +13,11 @@ public class Livro {
 	private Long id;
 	
 	private String nome;
+	
+	private String descricao;
+	
+	@Lob
+	private String foto;
 
 	public Long getId() {
 		return id;
@@ -27,6 +33,22 @@ public class Livro {
 
 	public void setNome(String nome) {
 		this.nome = nome;
+	}
+
+	public String getDescricao() {
+		return descricao;
+	}
+
+	public void setDescricao(String descricao) {
+		this.descricao = descricao;
+	}
+
+	public String getFoto() {
+		return foto;
+	}
+
+	public void setFoto(String foto) {
+		this.foto = foto;
 	}
 	
 	
