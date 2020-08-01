@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<h:html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://java.sun.com/jsf/html"
+	xmlns:f="http://java.sun.com/jsf/core"
+	xmlns:ui="http://java.sun.com/jsf/facelets"
+	xmlns:c="http://java.sun.com/jsp/jstl/core"
+	>
+  <h:head>
+    
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Shop Page- Ustora Demo</title>
+    
+    
+    <link rel="stylesheet"
+	href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css" />
+    
+    <!-- Bootstrap -->
+     <h:outputStylesheet name="css/bootstrap.min.css" />
+     <h:outputStylesheet name="css/font-awesome.min.css" />
+     <h:outputStylesheet name="style.css" />
+     <h:outputStylesheet name="css/owl.carousel.css" />
+     <h:outputStylesheet name="css/responsive.css" />
+    <h:outputScript name="js/owl.carousel.min.js" />
+    <h:outputScript name="js/jquery.sticky.js" />
+    <h:outputScript name="js/jquery.easing.1.3.min.js" />
+    <h:outputScript name="js/main.js" />
+        
+  </h:head>
+  <h:body>
+   
+
+
+    		<div class="jumbotron">
+			<h1>
+				Aplicação com JSF</h1>
+				 <div class="row">
+                <div class="col-sm-6">
+                    <div >
+						<h3>Commercio de livro</h3>
+                    </div>
+                </div>
+                                
+                <div class="col-sm-6">
+                    <div class="shopping-item">
+                        <a href="carrinho.jsf">Meu carrinho - <span class="cart-amunt">$100</span> <i class="fa fa-shopping-cart"></i> <span class="product-count">5</span></a>
+                    </div>
+                </div>
+            </div>
+
+		</div>  <!-- END JUMBOTRON -->
+    
+     <div class="single-product-area">
+        <div class="zigzag-bottom"></div>
+        <div class="container">
+            <div class="row">
+
+                <div class="col-md-12">
+                    <div class="product-content-right">
+                        <div class="product-breadcroumb">
+                            <a href="">Home</a>
+                            <a href="">Categoria</a>
+                            <a href="">Livro da Frida - 2022</a>
+                        </div>
+                        
+                        <div class="row">
+                            <div class="col-sm-6">
+                                <div class="product-images">
+                                    <div class="product-main-img">
+                                        <h:graphicImage name="img/frida2.jpeg" alt=""></h:graphicImage>
+                                    </div>
+                                                                        
+                                </div>
+                            </div>
+                            
+                            <div class="col-sm-6">
+                                <div class="product-inner">
+                                    <h2 class="product-name">Livro da Frida - 2022</h2>
+                                    <div class="product-inner-price">
+                                        <ins>$700.00</ins> <del>$100.00</del>
+                                    </div>    
+                                    
+                                    <form action="" class="cart">
+                                        <div class="quantity">
+                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1"></input>
+                                        </div>
+                                        <button class="add_to_cart_button" type="submit">Adicionar ao carrinho</button>
+                                    </form>   
+                                    
+                                    <div class="product-inner-category">
+                                        <p>Categora: <a href="">Romance</a>. Tags: <a href="">show</a>, <a href="">melhor</a>, <a href="">livros</a>, <a href="">documentário</a>. </p>
+                                    </div> 
+                                    
+                                    <div role="tabpanel">
+                                        <ul class="product-tab" role="tablist">
+                                            <li role="presentation" class="active"><a href="#home" aria-controls="home" role="tab" data-toggle="tab">Descrição</a></li>
+                                            <li role="presentation"><a href="#profile" aria-controls="profile" role="tab" data-toggle="tab">Comentários</a></li>
+                                        </ul>
+                                        <div class="tab-content">
+                                            <div role="tabpanel" class="tab-pane fade in active" id="home">
+                                                <h2>Descrição do livro</h2>  
+                                                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam tristique, diam in consequat iaculis, est purus iaculis mauris, imperdiet facilisis ante ligula at nulla. Quisque volutpat nulla risus, id maximus ex aliquet ut. Suspendisse potenti. Nulla varius lectus id turpis dignissim porta. Quisque magna arcu, blandit quis felis vehicula, feugiat gravida diam. Nullam nec turpis ligula. Aliquam quis blandit elit, ac sodales nisl. Aliquam eget dolor eget elit malesuada aliquet. In varius lorem lorem, semper bibendum lectus lobortis ac.</p>
+
+                                                <p>Mauris placerat vitae lorem gravida viverra. Mauris in fringilla ex. Nulla facilisi. Etiam scelerisque tincidunt quam facilisis lobortis. In malesuada pulvinar neque a consectetur. Nunc aliquam gravida purus, non malesuada sem accumsan in. Morbi vel sodales libero.</p>
+                                            </div>
+                                            <div role="tabpanel" class="tab-pane fade" id="profile">
+                                                <h2>Comentários</h2>
+                                                <div class="submit-review">
+                                                    <p><label for="name">Nome</label> <input name="name" type="text"></input></p>
+                                                    <p><label for="email">Email</label> <input name="email" type="email"></input></p>
+                                                    <div class="rating-chooser">
+                                                        <p>Sua classificação</p>
+
+                                                        <div class="rating-wrap-post">
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                            <i class="fa fa-star"></i>
+                                                        </div>
+                                                    </div>
+                                                    <p><label for="review">Seu comentário</label> <textarea name="review" id="" cols="30" rows="10"></textarea></p>
+                                                    <p><input type="submit" value="Submit"></input></p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                </div>
+                            </div>
+                        </div>
+                        
+                        
+                        
+                    </div>                    
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    
+
+
+    
+    <div class="footer-bottom-area">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <div class="copyright">
+                       <p>&copy; 2015 infnet. All Rights  Reserved. <a href="#" target="_blank">infnet.edu</a></p>
+                    </div>
+                </div>
+                
+                <div class="col-md-4">
+                    <div class="footer-card-icon">                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+   
+    <!-- Latest jQuery form server -->
+    <script src="https://code.jquery.com/jquery.min.js"></script>
+    
+    <!-- Bootstrap JS form CDN -->
+    <script src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    
+    
+  </h:body>
+</h:html>
