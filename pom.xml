@@ -39,6 +39,7 @@
     </modules>
 
     <properties>
+    	<cxf.version>3.0.2</cxf.version>
         <!-- Explicitly declaring the source encoding eliminates the following 
             message: -->
         <!-- [WARNING] Using platform encoding (UTF-8 actually) to copy filtered 
