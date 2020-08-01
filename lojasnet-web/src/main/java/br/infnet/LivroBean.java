@@ -27,7 +27,7 @@ public class LivroBean {
 		String id = getRequestParameter("paramId");
 		Livro livro = service.obterPeloId(Long.valueOf(id));
 		this.setLivro(livro);
-		return "edit";
+		return "/livros/edit";
 	}
 
 	private String getRequestParameter(String parametro) {
@@ -38,17 +38,17 @@ public class LivroBean {
 	}
 	
 	public String home() {
-		return "home";
+		return "/livros/home";
 	}
 	
 	public String salvar() {
 		service.salvar(livro);
-		return "home";
+		return "/livros/home";
 	}
 	
 	public String newForm() {
 		livro = new Livro();
-		return "form";
+		return "/livros/form";
 	}
 
 	public List<Livro> getLivros() {
