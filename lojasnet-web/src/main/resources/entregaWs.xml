@@ -1,0 +1,102 @@
+<?xml version='1.0' encoding='UTF-8'?><wsdl:definitions xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/" xmlns:tns="http://org.jboss.ws/entregaapp/entrega" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:ns1="http://schemas.xmlsoap.org/soap/http" name="EntregaServiceWs" targetNamespace="http://org.jboss.ws/entregaapp/entrega">
+  <wsdl:types>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema" xmlns:tns="http://org.jboss.ws/entregaapp/entrega" elementFormDefault="unqualified" targetNamespace="http://org.jboss.ws/entregaapp/entrega" version="1.0">
+
+  <xs:element name="listar" type="tns:listar"/>
+
+  <xs:element name="listarResponse" type="tns:listarResponse"/>
+
+  <xs:element name="salvar" type="tns:salvar"/>
+
+  <xs:element name="salvarResponse" type="tns:salvarResponse"/>
+
+  <xs:complexType name="listar">
+    <xs:sequence/>
+  </xs:complexType>
+
+  <xs:complexType name="listarResponse">
+    <xs:sequence>
+      <xs:element maxOccurs="unbounded" minOccurs="0" name="return" type="tns:entregaResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="entregaResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="id" type="xs:int"/>
+      <xs:element minOccurs="0" name="cliente" type="xs:string"/>
+      <xs:element minOccurs="0" name="pedido" type="xs:string"/>
+      <xs:element minOccurs="0" name="status" type="xs:string"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salvar">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="arg0" type="tns:entregaResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+  <xs:complexType name="salvarResponse">
+    <xs:sequence>
+      <xs:element minOccurs="0" name="return" type="tns:entregaResponse"/>
+    </xs:sequence>
+  </xs:complexType>
+
+</xs:schema>
+  </wsdl:types>
+  <wsdl:message name="listar">
+    <wsdl:part element="tns:listar" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="salvar">
+    <wsdl:part element="tns:salvar" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="listarResponse">
+    <wsdl:part element="tns:listarResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:message name="salvarResponse">
+    <wsdl:part element="tns:salvarResponse" name="parameters">
+    </wsdl:part>
+  </wsdl:message>
+  <wsdl:portType name="entregaWs">
+    <wsdl:operation name="listar">
+      <wsdl:input message="tns:listar" name="listar">
+    </wsdl:input>
+      <wsdl:output message="tns:listarResponse" name="listarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="salvar">
+      <wsdl:input message="tns:salvar" name="salvar">
+    </wsdl:input>
+      <wsdl:output message="tns:salvarResponse" name="salvarResponse">
+    </wsdl:output>
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="EntregaServiceWsSoapBinding" type="tns:entregaWs">
+    <soap:binding style="document" transport="http://schemas.xmlsoap.org/soap/http"/>
+    <wsdl:operation name="listar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="listar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="listarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="salvar">
+      <soap:operation soapAction="" style="document"/>
+      <wsdl:input name="salvar">
+        <soap:body use="literal"/>
+      </wsdl:input>
+      <wsdl:output name="salvarResponse">
+        <soap:body use="literal"/>
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="EntregaServiceWs">
+    <wsdl:port binding="tns:EntregaServiceWsSoapBinding" name="entregaWsPort">
+      <soap:address location="http://localhost:8080/entregaapp-ejb/EntregaServiceWs/entregaWs"/>
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>
