@@ -12,6 +12,7 @@ import javax.inject.Inject;
 
 import br.infnet.catalogo.ILivroService;
 import br.infnet.catalogo.Livro;
+import br.infnet.pagamento.PagamentoService;
 import ws.jboss.org.alibanet.ecommerce.catalogo.EntregaResponse;
 
 @Model
@@ -25,6 +26,9 @@ public class VitrineBean implements Serializable {
 
 	@Inject
 	private ILivroService service;
+	
+	@Inject
+	private PagamentoService pgto;
 	
 	@Inject
 	private EntregaService entregaService;
@@ -47,6 +51,7 @@ public class VitrineBean implements Serializable {
 		if(lista != null) {
 			quantidade = lista.size();
 		}
+		pgto.enviar();
 		return "/vitrine/entrega";
 	}
 	
