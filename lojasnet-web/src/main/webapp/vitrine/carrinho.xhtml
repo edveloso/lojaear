@@ -89,7 +89,7 @@
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="#">
+                            <h:form>
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
@@ -112,7 +112,9 @@
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.html">Ship Your Idea</a> 
+                                                <a href="single-product.html">
+                                                <h:outputText value="#{vitrineBean.livro.nome}"></h:outputText>
+                                                - Ship Your Idea</a> 
                                             </td>
 
                                             <td class="product-price">
@@ -138,14 +140,14 @@
                                                     <input type="text" placeholder="Número do Coupon" value="" id="coupon_code" class="input-text" name="coupon_code"></input>
                                                     <input type="submit" value="Enviar" name="apply_coupon" class="button"></input>
                                                 </div>
-                                                <input type="submit" value="Atualizar carrinho" name="update_cart" class="button"></input>
-                                                <input type="submit" value="Finalizar compra" name="proceed" class="checkout-button button alt wc-forward"></input>
-                                                <a href="pagamento.jsf" >foi</a>
+                                                <input type="submit" value="Atualizar carrinho" name="update_cart" class="button"></input> &nbsp;
+                                                 <h:commandButton action="#{vitrineBean.finalizar}" value="Finalizar compra" styleClass="checkout-button button alt wc-forward"></h:commandButton>
+                                                
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
+                            </h:form>
 
                             <div class="cart-collaterals">
 

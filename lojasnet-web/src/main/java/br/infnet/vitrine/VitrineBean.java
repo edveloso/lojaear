@@ -1,9 +1,11 @@
 package br.infnet.vitrine;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
 
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.faces.context.FacesContext;
 import javax.inject.Inject;
@@ -12,7 +14,13 @@ import br.infnet.catalogo.ILivroService;
 import br.infnet.catalogo.Livro;
 
 @Model
-public class VitrineBean {
+@SessionScoped
+public class VitrineBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private ILivroService service;
@@ -28,8 +36,19 @@ public class VitrineBean {
 		livro = new Livro();
 	}
 	
+	
+	public String pagar() {
+		//TODO pagamento realizado com sucesso
+		return "/vitrine/entrega";
+	}
+	
+	public String finalizar() {
+		return "/vitrine/pagamento";
+	}
+	
 	public String adicionarAoCarrinho() {
-		
+		System.out.println(livro);
+		System.out.println(quantidade);
 		return "/vitrine/carrinho";
 	}
 	
@@ -37,7 +56,7 @@ public class VitrineBean {
 		String id = getRequestParameter("paramId");
 		Livro livro = service.obterPeloId(Long.valueOf(id));
 		this.setLivro(livro);
-		return "/vitrine/produto?faces-redirect=true";
+		return "/vitrine/produto";
 	}
 
 	private String getRequestParameter(String parametro) {

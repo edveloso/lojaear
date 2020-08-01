@@ -76,19 +76,21 @@
                             
                             <div class="col-sm-6">
                                 <div class="product-inner">
+                                <h:form>
                                     <h2 class="product-name">
+                                    
                                     <h:outputText value="#{vitrineBean.livro.nome}"></h:outputText>
-                                    Livro da Frida - 2022</h2>
+                                    Livro da Frida</h2>
                                     <div class="product-inner-price">
                                         <ins>$700.00</ins> <del>$100.00</del>
                                     </div>    
                                     
-                                    <form action="" class="cart">
                                         <div class="quantity">
-                                            <input type="number" size="4" class="input-text qty text" title="Qty" value="1" name="quantity" min="1" step="1"></input>
+                                        	<h:inputText styleClass="input-text qty text" value="#{vitrineBean.quantidade}" name="quantity" min="1" step="1">  </h:inputText>
                                         </div>
-                                        <button class="add_to_cart_button" type="submit">Adicionar ao carrinho</button>
-                                    </form>   
+                                        <h:commandButton styleClass="add_to_cart_button" action="#{vitrineBean.adicionarAoCarrinho}" value="Adicionar ao carrinho" ></h:commandButton>
+                                    
+                                    </h:form>
                                     
                                     <div class="product-inner-category">
                                         <p>Categora: <a href="">Romance</a>. Tags: <a href="">show</a>, <a href="">melhor</a>, <a href="">livros</a>, <a href="">documentário</a>. </p>
