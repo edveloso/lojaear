@@ -141,7 +141,7 @@
                                 <div class="clear"></div>
                             </form>
 
-                            <form enctype="multipart/form-data" action="#" class="checkout" method="post" name="checkout">
+                            <h:form>
 
                                 <div id="customer_details" class="">
                                     <div class="">
@@ -214,7 +214,15 @@
                                         <tbody>
                                             <tr class="cart_item">
                                                 <td class="product-name">
-                                                    Ship Your Idea <strong class="product-quantity">× 1</strong> </td>
+                                                <h:outputText
+                                                   value="#{vitrineBean.livro.nome}"
+                                                ></h:outputText>
+                                                
+                                                    <strong class="product-quantity">× 
+                                                <h:outputText
+                                                   value="#{vitrineBean.quantidade}"
+                                                ></h:outputText>    
+                                                    </strong> </td>
                                                 <td class="product-total">
                                                     <span class="amount">£15.00</span> </td>
                                             </tr>
@@ -268,8 +276,11 @@
 
                                         <div class="form-row place-order">
 
-                                            <input type="submit" data-value="Place order" value="Place order" id="place_order" name="woocommerce_checkout_place_order" class="button alt"></input>
-
+										<h:commandButton
+										   action="#{vitrineBean.pagar}"
+										   value="Pagar"
+										   styleClass="button alt"
+										></h:commandButton>
 
                                         </div>
 
@@ -277,7 +288,7 @@
 
                                     </div>
                                 </div>
-                            </form>
+                            </h:form>
 
                         </div>                       
                     </div>                    

@@ -89,7 +89,7 @@
                 <div class="col-md-8">
                     <div class="product-content-right">
                         <div class="woocommerce">
-                            <form method="post" action="#">
+                            <h:form>
                                 <table cellspacing="0" class="shop_table cart">
                                     <thead>
                                         <tr>
@@ -108,11 +108,21 @@
                                             </td>
 
                                             <td class="product-thumbnail">
-                                                <a href="single-product.html"><h:graphicImage width="145" height="145" alt="poster_1_up" class="shop_thumbnail" name="img/frida2.jpeg"></h:graphicImage></a>
+                                                <a href="single-product.html">
+                                                
+                                                <h:graphicImage width="145" height="145" 
+                                                alt="poster_1_up" class="shop_thumbnail" 
+                                                value="#{vitrineBean.livro.foto}"></h:graphicImage>
+                                                
+                                                </a>
                                             </td>
 
                                             <td class="product-name">
-                                                <a href="single-product.html">Ship Your Idea</a> 
+                                                <a href="single-product.html"> 
+                                                   <h:outputText 
+                                                      value="#{vitrineBean.livro.nome}"
+                                                   ></h:outputText>
+                                                  </a> 
                                             </td>
 
                                             <td class="product-price">
@@ -139,13 +149,19 @@
                                                     <input type="submit" value="Enviar" name="apply_coupon" class="button"></input>
                                                 </div>
                                                 <input type="submit" value="Atualizar carrinho" name="update_cart" class="button"></input>
-                                                <input type="submit" value="Finalizar compra" name="proceed" class="checkout-button button alt wc-forward"></input>
+                                                &nbsp;
+                                                <h:commandButton
+                                                    action="#{vitrineBean.finalizar}"
+                                                    value="Finalizar compra"
+                                                    styleClass="checkout-button button alt wc-forward"
+                                                ></h:commandButton>
+                                                
                                                 <a href="pagamento.jsf" >foi</a>
                                             </td>
                                         </tr>
                                     </tbody>
                                 </table>
-                            </form>
+                            </h:form>
 
                             <div class="cart-collaterals">
 

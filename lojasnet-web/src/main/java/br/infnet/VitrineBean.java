@@ -1,14 +1,22 @@
 package br.infnet;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.enterprise.context.SessionScoped;
 import javax.enterprise.inject.Model;
 import javax.inject.Inject;
 
 import ws.jboss.org.entregaapp.entrega.EntregaResponse;
 
 @Model
-public class VitrineBean {
+@SessionScoped
+public class VitrineBean implements Serializable {
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	private EntregaFacade facade;
@@ -27,11 +35,22 @@ public class VitrineBean {
 	public VitrineBean() {
 		
 	}
+	
+	public String pagar() {
+		//TODO chamada assincrona
+		return "/entrega/entrega";
+	}
+	
+	public String finalizar() {
+		return "/vitrine/pagamento";
+	}
 
 	public String adicionarAoCarrinho() {
 		//TODO persistir o estado no ejb de Carrinho
 		System.out.println(livro);
 		System.out.println(quantidade);
+		setLivro(livro);
+		setQuantidade(quantidade);
 		return "/vitrine/carrinho";
 	}
 	
