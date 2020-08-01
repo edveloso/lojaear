@@ -26,6 +26,9 @@ public class VitrineBean implements Serializable {
 	
 	private Livro livro = new Livro();
 	
+	@Inject
+	private PagamentoService pgto;
+	
 	private List<Livro> livros;
 	
 	private Integer quantidade;
@@ -38,6 +41,7 @@ public class VitrineBean implements Serializable {
 	
 	public String pagar() {
 		//TODO chamada assincrona
+		pgto.enviar("Livro: "+ livro.getNome() + " qtd: " + quantidade);
 		return "/entrega/entrega";
 	}
 	
