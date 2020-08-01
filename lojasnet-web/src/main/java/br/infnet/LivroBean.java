@@ -24,17 +24,10 @@ public class LivroBean {
 	}
 	
 	public String formAlterar() {
-		String id = getRequestParameter("paramId");
+		String id = RequestParamUtil.getRequestParameter("paramId");
 		Livro livro = service.obterPeloId(Long.valueOf(id));
 		this.setLivro(livro);
 		return "/livros/edit";
-	}
-
-	private String getRequestParameter(String parametro) {
-		FacesContext context = FacesContext.getCurrentInstance();
-		Map<String, String> map = context.getExternalContext().getRequestParameterMap();
-		String id = map.get(parametro);
-		return id;
 	}
 	
 	public String home() {

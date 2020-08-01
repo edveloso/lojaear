@@ -59,13 +59,23 @@
         <div class="container">
             <div class="row">
 
-			
+			<h:form id="form" >
+			<ui:repeat var="livro" value="#{vitrineBean.livros}">
                 <div class="col-md-3 col-sm-6">
                     <div class="single-shop-product">                        
                         <div class="product-upper">
-                        <h:graphicImage name="img/fridinha.jpg" ></h:graphicImage>
+                        <h:graphicImage value="#{livro.foto}" ></h:graphicImage>
                         </div>
-                        <h2><a href="">Livro da Frida - 2022</a></h2>
+                        <h2>
+                        
+                         <h:commandLink
+                            action="#{vitrineBean.formMostrar()}"
+                            value="#{livro.nome}"
+                         >
+                         	<f:param value="#{livro.id}" name="paramId" ></f:param>
+                         </h:commandLink>
+                        
+                        </h2>
                         <div class="product-carousel-price">
                             <ins>$899.00</ins> <del>$999.00</del>
                         </div>  
@@ -76,7 +86,9 @@
                                               
                     </div>
                 </div>
-
+                
+              </ui:repeat>  
+			</h:form>
 
             </div>
             
